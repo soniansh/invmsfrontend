@@ -1,0 +1,190 @@
+                     
+                     
+<h1 class="centrealign"><b>Products Details</b></h1>
+
+<div class="container">
+    <div>
+        <div class="row">
+
+            
+                <div class="input-group col">
+                    <input type="text" id="myInput" [(ngModel)]="searchText"  class="form-control-plaintext"
+                        placeholder="Search By ProductName, ProductTag,..">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search iconsize"></i>
+                    </span>
+                </div>
+
+                <div class=" col-sm-3">
+                    <div class="row justify-content-end ">
+                        <a href="" class="btn btn-dark ahover"  [routerLink]="['/groupcatg']"><i class="fa fa-bar-chart" aria-hidden="true">&nbsp;<span>ProductSalesDashboard</span></i></a>
+
+                    </div>
+                </div>
+                    </div>
+
+         <div class="col-sm-4 "> 
+            <app-filter [list]="filterList" (onFilterChange)="filterChange($event)"></app-filter>
+            <p>Filter</p> 
+            
+         </div> 
+    </div>
+
+
+   
+
+
+
+
+
+
+
+
+    <table class="table table-striped" style=" align-items: center;">
+        <thead>
+            <tr>
+                <th  (click)="sort('productId')"> ProductID&nbsp;<i
+                    class="fa fa-sort sorticonsize"></i> </th>
+                <!-- <th (click)="sort('empName')"> EmployeeName&nbsp;<i
+                    class="fa fa-sort sorticonsize"></i>  </th> -->
+                    <th >ProductName </th>
+                <th> ProductTag </th>
+                <th> Size</th>
+                <th> Category</th>
+                <th> Price </th>
+                <th>Picture</th>
+                <th> Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | orderBy: key: reverse  | filter:searchText | paginate: { itemsPerPage: 4, currentPage:p }">
+                <td>{{product.productId}}</td>
+                <td>{{product.productName}} </td>
+                <td>{{product.productTag}} </td>
+                <td>{{product.productSize}} </td>
+                <td>{{product.productCategory}} </td>
+                <td>{{product.productPrice}} </td>
+                <td><img src="{{product.productImageUrl}}" width="80" height="40"/></td>
+
+                
+                <td>
+                    <button  (click)="openModalUpdate(templateB,product.productId)" class="btn "
+                    > 
+                    <i
+                    class="fa fa-pencil" title="Update Product"></i>
+                </button>
+                <button  (click)="openModalDelete(templateA,product.productId)" class="btn btn-danger"
+                >
+                <i
+                class="fa fa-trash" title="Delete Product"></i>
+            </button>
+                    
+                </td>
+            </tr> 
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary-outline pull-right btn btn-success" [routerLink]="['/addproduct']"><i
+        class="fa fa-plus"></i> Add NewProduct</button>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+    
+
+</div>
+
+
+
+
+<ng-template #templateA>
+    <div class="modal-header">
+      <h3 class="modal-title pull-left"><b>Delete Product</b></h3>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body text-center">
+      <p>Do you really want to delete this Product (productId:{{idToBeDeleted}})
+        ?</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="confirm()">Ok</button>
+      <button  class="float-start" type="button" class="btn btn-primary" (click)="decline()">Cancel</button>
+    </div>
+  </ng-template>
+
+
+
+  <ng-template #templateB >
+    <div class="container mt-2">
+        <div class="card styleinpadd card-image">
+   <div class="modal-header">
+    <h3 class="centrealign"> <b>Update Product </b></h3>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+         <span aria-hidden="true">×</span>
+      </button>
+   </div>
+   <div class="modal-body">
+
+    <form  novalidate (ngSubmit)="onSubmitUpdate()"   class="row g-3">
+
+        <div class="form-group col-md-4">
+            <label> Product Id</label>
+            <input type="text" disabled class="form-control" id="productId" [(ngModel)]="product.productId" name="productId" class="form-control" >
+        </div>
+
+        <div class="form-group col-md-4">
+            <label> Product Name </label>
+            <input type="text" id="productName" [(ngModel)]="product.productName" name="productName" class="form-control" >
+        </div>
+
+        <div class="form-group col-md-4">
+            <label> Product tag </label>
+            <input type="text" id="productTag" [(ngModel)]="product.productTag"  name="productTag" class="form-control">                
+        </div>
+    
+        <div class="form-group col-md-8">
+            <label> Product Description</label>
+            <input type="text" id="productDescription" [(ngModel)]="product.productDescription"  name="productDescription" class="form-control" >
+        </div>
+        <div class="form-group col-md-8">
+            <label> Product Image URL</label>
+            <input type="text" id="productImageUrl" [(ngModel)]="product.productImageUrl"  name="productImageUrl" class="form-control" >
+        </div>
+    
+    <div class="form-group col-md-4">
+        <label>Price</label>
+        <input type="text" id="productPrice" [(ngModel)]="product.productPrice" name="productPrice" class="form-control">
+    </div>
+   
+
+    <div class="form-group col-md-6">
+        <label>Category </label>
+        <select  name="productCategory" [(ngModel)]="product.productCategory"
+            class="form-select  d-block w-100" aria-label="Default select example" id="productCategory">
+
+            <option value="" disabled>Select product Category</option>
+            <option *ngFor="let Catg of Catgs" [ngValue]="Catg.value" >
+                {{Catg.viewValue}}</option>
+        </select>
+    </div>
+   
+    
+    <div class="col-12">
+        <br> 
+    <button  class="btn btn-success" type="submit" (click)="modalRef.hide()">Submit</button>
+</div>
+
+
+    </form>
+
+
+
+</div>
+<div class="modal-footer">
+   <button type="button" class="btn btn-default btn-outline-secondary" (click)="modalRef.hide()">Close</button>
+</div>
+</div>
+</div>
+</ng-template>

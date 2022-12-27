@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"; */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100i,300,300i,400,400i,500,500i,700,700i&display=swap'); */
+
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width:100%;
+    height: 40px;
+    background-color: grey;
+    text-align: center;
+    color: white;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.app-btn {
+    height: 32px;
+    width: 110px;
+    background: #f28100; 
+    border: none;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }

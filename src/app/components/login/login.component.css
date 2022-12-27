@@ -1,0 +1,54 @@
+
+.styleinpadd{
+    padding: 10px;
+}
+
+.centrealign{
+    text-align: center;
+}
+
+.card-image{
+    height: 320px;
+    width:440px; 
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+ }
+
+ .input-group-prepend span{
+     height: 38px;
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+
+    border-radius: 3px;
+    border: 2px ;
+    }
+
+    input:focus{
+        outline: 0 0 0 0  !important;
+        box-shadow: 0 0 0 0 !important;
+        
+        } 
+
+        .iconsize{
+            margin-left: 5px;
+            margin-top: 5px;
+            margin-right: 5px;
+              font-size: 30px;
+              height: 30px;
+              vertical-align: middle;
+          }   
+
+
+          .login_btn{
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+            }
+            
+            .login_btn:hover{
+            color: black;
+            background-color: white;
+            }
+                   

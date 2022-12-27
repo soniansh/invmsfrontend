@@ -1,0 +1,56 @@
+.centrealign {
+    text-align: center;
+  }
+
+
+  .card-image{
+    height: 240px;
+    width:600px; 
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+    padding: 10px;
+    background-color: rgb(239, 235, 241);
+  }
+  
+  body {
+
+    display: grid;
+
+    grid-template-columns: auto 0px;
+
+  }
+
+ 
+
+  .top {
+
+    place-self:end;
+
+    position:sticky;
+
+    bottom:20px;
+
+    margin-right:20px;
+
+    margin-top:100vh;
+
+   
+
+    /* visual styling */
+
+    text-decoration: none;
+
+    padding: 10px;
+
+    font-family: sans-serif;
+
+    color: #fff;
+
+    background: #000;
+
+    border-radius: 100px;
+
+    white-space:nowrap;
+
+  }

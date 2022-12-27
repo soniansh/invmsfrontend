@@ -1,0 +1,12 @@
+body {
+    background-color: #ececec;
+  }
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: grey;
+    text-align: center;
+}

@@ -1,0 +1,123 @@
+#sect1 {  
+  width:100%;
+  height:100%; 
+  border:5px solid rgb(0, 140, 255);
+  color: #fff;background-image: url("/assets/images/inventorymg.png");  
+  background-size: 100% ;  
+  background-size: cover;  
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+  min-width: 1280px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 53px;
+  bottom:300px;
+  left: 0;
+  /* right: 10px; */
+
+ }   
+
+
+  .card-image{
+      text-align: center;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 1280px;
+    height: 250px;
+    
+ }
+
+ .first-txt {
+    position: absolute;
+    top: 50px;
+    left: 450px;
+    color: rgba(230, 230, 198, 0.918);
+}
+
+.icons{
+  /* text-align: center; */
+ position: absolute; bottom: 10px; left: 0;
+ width: 100%;
+}
+.socialIcons img {
+                  height: 50px;
+                  width: 50px;
+                  opacity: 0.4;
+                  filter: alpha(opacity=40);
+                  margin-right: 10px;
+              }
+              .icons img {
+                  /* position: relative; */
+                  display: inline;
+                  margin-right: 0 auto;
+                  margin-left: 0 auto;
+                  
+              }
+
+              .socialIcons img:hover {
+                  opacity:1;
+              }
+
+.iconssize {
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
+
+}
+
+.second-txt {
+  position: absolute;
+  top: 485px;
+  left: 500px;
+  color: rgba(255, 255, 255, 0.918);
+}
+
+.third-txt {
+  position: absolute;
+  top: 400px;
+  left: 100px;
+  color: rgba(255, 255, 255, 0.918);
+  border-top: 2px solid #d68e8e;
+
+}
+
+.breakline{
+  color: white;
+}
+
+
+#footer_bottom  { 
+  content: "";
+    flex: 1 1;
+    border-bottom: 2px solid #d68e8e;
+    margin: auto;
+
+    
+    display: inline-block;
+  
+    
+
+}
+.k2{
+  width: 100%; 
+   text-align: center; 
+   border-top: 1px solid rgb(230, 205, 205); 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+}
+
+.line {
+  width: 500px;
+  height: 0;
+  border: 1px solid #a07e40;
+  margin: 5px;
+  display:inline-block;
+}
+

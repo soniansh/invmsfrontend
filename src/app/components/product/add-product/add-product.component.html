@@ -1,0 +1,77 @@
+<!-- <div class="col-md-6 offset-md-3"> -->
+    <br>
+    <h2 class="centrealign"><b>Add Product </b></h2>
+    <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>Success!</strong> Employee details have been added successfully..!!
+<button (click)="closeAlert()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> [(ngModel)] = "employee.productId"-->
+<div class="container mt-4">
+    <div class="card styleinpadd card-image">
+    <form  [formGroup]="Product" (ngSubmit)="onSubmit()" class="row g-3">
+       
+            <!-- <div class="form-group col-md-4">
+                <label> Product Id</label>
+                <input type="text" id="productId" [(ngModel)]="product.productId" formControlName="productId" class="form-control" >
+                <span class="alert" *ngIf="productId.invalid && productId.touched && !productId.value">Please enter your ProductId</span>
+                <span class="alert" *ngIf="productId.invalid && productId.touched && productId.errors['minlength']">You must enter at least 1 digits </span>
+                <span class="alert" *ngIf="productId.invalid && productId.touched && productId.errors['maxlength']">You cannot enter more than 3 digits</span>
+            </div> -->
+
+            <div class="form-group col-md-4">
+                <label> Product Name </label>
+                <input type="text" id="productName" [(ngModel)]="product.productName" formControlName="productName" class="form-control" >
+                <span class="alert" *ngIf="productName.invalid && productName.touched">Please enter your name</span>
+            </div>
+
+            <div class="form-group col-md-4">
+                <label> Product tag </label>
+                <input type="text" id="productTag" [(ngModel)]="product.productTag"  formControlName="productTag" class="form-control">  
+                <span class="alert" *ngIf="productTag.invalid && productTag.touched">Please enter ProductTag</span>              
+            </div>
+
+            <div class="form-group col-md-4">
+                <label> Product Size </label>
+                <input type="text" id="productTag" [(ngModel)]="product.productSize"  formControlName="productSize" class="form-control">  
+                <span class="alert" *ngIf="productSize.invalid && productSize.touched">Please enter ProductSize</span>              
+            </div>
+        
+            <div class="form-group col-md-8">
+                <label> Product Description</label>
+                <input type="text" id="productDescription" [(ngModel)]="product.productDescription"  formControlName="productDescription" class="form-control" >
+                <span class="alert" *ngIf="productDescription.invalid && productDescription.touched">Please enter ProductDescription</span>              
+            </div>
+
+            <div class="form-group col-md-8">
+                <label> Product Image URL</label>
+                <input type="text" id="productImageUrl" [(ngModel)]="product.productImageUrl"  formControlName="productImageUrl" class="form-control" >
+                <span class="alert" *ngIf="productImageUrl.invalid && productImageUrl.touched">Please enter productImageUrl</span>              
+            </div>
+        
+        <div class="form-group col-md-4">
+            <label> Product Price </label>
+            <input type="text" id="productPrice" [(ngModel)]="product.productPrice" formControlName="productPrice" class="form-control">
+            <span class="alert" *ngIf="productPrice.invalid && productPrice.touched">Please enter ProductPrice</span>              
+        </div>
+       
+    
+        <div class="form-group col-md-6">
+            <label>Product Category </label>
+            <select [(ngModel)]="product.productCategory" formControlName="productCategory"
+                class="form-select  d-block w-100" aria-label="Default select example" id="productCategory">
+
+                <option value="" disabled>Select product Category</option>
+                <option *ngFor="let Catg of Catgs" [ngValue]="Catg.value" >
+                    {{Catg.viewValue}}</option>
+            </select>
+            <span class="alert" *ngIf="productCategory.invalid && productCategory.touched">Please enter  ProductCategory
+                productCategory</span>
+        </div>
+       
+        
+        <div class="col-12">
+            <br> 
+        <button    class="btn btn-success" type="submit" [disabled]="Product.invalid">Submit</button>
+    </div>
+    </form>
+</div>
+</div>

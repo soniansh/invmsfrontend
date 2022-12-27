@@ -1,0 +1,61 @@
+<div class="centrealign">
+    <br>
+    
+    <h1><b>Login</b></h1>
+<div class="container mt-5">
+    <div class="alert alert-warning" role="alert" *ngIf='invalidLogin'>{{errorMessage}}</div>
+    <div class="card styleinpadd card-image">
+        <i class="fa fa-lock iconsize"></i>
+
+        <form (ngSubmit)="login()">
+            
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                </div>
+                <input type="text"
+            [(ngModel)]="users.userName"
+            name="userName"
+            id="userName"
+            placeholder="Enter your email"
+            class="form-control mb-3"
+            >   
+            </div>
+            
+            <div class="input-group form-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                </div>
+                <input type="password"
+                [(ngModel)]="users.userPassword"
+                name="userPassword"
+                id="userPassword"
+                placeholder="Enter your password"
+                class="form-control mb-3"
+                >
+    
+            </div>
+
+            
+            <!-- <input type="submit"
+            value="Login"
+            class="btn btn-outline-primary form-control rounded-0"> -->
+            
+
+            <div class="form-group centrealign">
+                <button class="btn btn-outline-warning  form-control rounded-0 float-centre" type="submit">Login</button>
+            </div>
+           <br>
+            <div class="d-flex">
+                <hr class="my-auto flex-grow-1">
+                <div class="px-4"> <h3>New to Invms</h3></div>
+                <hr class="my-auto flex-grow-1">
+              </div>
+
+            
+            <button routerLink="/register" class="btn btn-secondary form-control rounded-0 float-centre">Create your Invms Account</button>
+
+        </form>
+   
+    </div>
+</div>
